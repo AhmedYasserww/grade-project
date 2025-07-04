@@ -26,23 +26,23 @@ class APIHelper {
 
   // get request
 
-  Future<ApiResponse> getRequest({
-    required String endPoint,
-    Map<String, dynamic>? data,
-    bool isFormData = true,
-    bool isAuthorized = true,
-  }) async {
-    try {
-      var response = await dio.get(endPoint,
-          data: isFormData ? FormData.fromMap(data ?? {}) : data,
-          options: Options(headers: {
-            if (isAuthorized) "Authorization": "Bearer ${LocalData.accessToken}"
-          }));
-      return ApiResponse.fromResponse(response);
-    } catch (e) {
-      return ApiResponse.fromError(e);
-    }
-  }
+  // Future<ApiResponse> getRequest({
+  //   required String endPoint,
+  //   Map<String, dynamic>? data,
+  //   bool isFormData = true,
+  //   bool isAuthorized = true,
+  // }) async {
+  //   try {
+  //     var response = await dio.get(endPoint,
+  //         data: isFormData ? FormData.fromMap(data ?? {}) : data,
+  //         options: Options(headers: {
+  //           if (isAuthorized) "Authorization": "Bearer ${LocalData.accessToken}"
+  //         }));
+  //     return ApiResponse.fromResponse(response);
+  //   } catch (e) {
+  //     return ApiResponse.fromError(e);
+  //   }
+  // }
 
   // post
 
