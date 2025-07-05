@@ -1,57 +1,86 @@
 // ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:untitled6/core/services/service_locator.dart';
+import 'package:untitled6/features/students/data/model/all_material_model/AllMaterialModel.dart';
+import 'package:untitled6/features/students/data/repos/all_material_repo/all_material_repo_imp.dart';
 import 'package:untitled6/features/students/ui/lec_content_screen.dart';
+import 'package:untitled6/features/students/ui/manager/all_material_cubit/all_material_cubit.dart';
 import 'package:untitled6/features/students/ui/widgets/lect.dart';
 
 import '../../../core/helper/navigator.dart';
 
 class Lectures extends StatelessWidget {
+  final String title;
+
+
+  const Lectures({super.key, required this.title});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 300,
-                color: Color(0xff022D4F),
-              ),
-              Container(
-                width: double.infinity,
-                color: Colors.white,
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return  BlocProvider<AllMaterialCubit>(
+      create: (context) =>
+      AllMaterialCubit(getIt.get<AllMaterialRepoImp>())..fetchAllMaterials(),
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Column(
               children: [
-                SizedBox(
-                  height: 120,
+                Container(
+                  width: double.infinity,
+                  height: 300,
+                  color: const Color(0xff022D4F),
                 ),
-                Text(
-                  "Physics Lectures",
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white),
+                Container(
+                  width: double.infinity,
+                  color: Colors.white,
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                    height: 265,
-                    child: lect(ontap: () {
-                      navigateTo(context, screen: LecContent());
-                    }))
               ],
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 120,
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white),
+                      ),
+                      const Text(
+                        "   Lectures",
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                      height: 265,
+                    child: lect(
+                      onTap: (material) {
+                        navigateTo(
+                          context,
+                          screen: LecContent( allMaterials: material,), // ✅ عنصر واحد فقط
+                        );
+                      },
+                    )
+                  )],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled6/core/services/service_locator.dart';
 import 'package:untitled6/core/widgets/inputs/default_container.dart';
+import 'package:untitled6/features/students/data/repos/all_courses_repo/all_courses_repo_imp.dart';
 import 'package:untitled6/features/students/data/repos/all_doctor_repo/all_doctor_repo_imp.dart';
+import 'package:untitled6/features/students/data/repos/all_material_repo/all_material_repo_imp.dart';
+import 'package:untitled6/features/students/ui/manager/all_courses_cubit/all_courses_cubit.dart';
 import 'package:untitled6/features/students/ui/manager/all_doctors_cubit/all_doctors_cubit.dart';
+import 'package:untitled6/features/students/ui/manager/all_material_cubit/all_material_cubit.dart';
 import 'package:untitled6/features/students/ui/term_screen.dart';
 import 'package:untitled6/features/students/ui/widgets/docotors_list.dart';
 
@@ -20,8 +24,15 @@ class _ExploreState extends State<Explore> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AllDoctorsCubit(getIt.get<AllDoctorsRepoImp>())..fetchAllDoctors(),
+    return MultiBlocProvider(
+        providers: [
+    BlocProvider<AllDoctorsCubit>(
+    create: (context) =>
+    AllDoctorsCubit(getIt.get<AllDoctorsRepoImp>())..fetchAllDoctors(),
+    ),
+
+
+    ],
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Stack(children: [
@@ -43,11 +54,11 @@ class _ExploreState extends State<Explore> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+               const  SizedBox(
                   height: 50,
                 ),
       
-                Text(
+                const Text(
                   'Doctors For Level 1',
                   style: TextStyle(
                     color: Colors.white,
@@ -64,7 +75,7 @@ class _ExploreState extends State<Explore> {
                 Center(
                   child: Column(
                     children: [
-                      Text(
+                      const Text(
                         'Choose your educational group',
                         style: TextStyle(
                           color: Colors.white,
@@ -72,7 +83,7 @@ class _ExploreState extends State<Explore> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      SizedBox(height: 40),
+                      const SizedBox(height: 40),
                       DefaultContainer(
                           onpressed: () {
                             navigateTo(context, screen: Term());

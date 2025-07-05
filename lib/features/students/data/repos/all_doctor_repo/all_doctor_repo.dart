@@ -5,4 +5,5 @@ import 'package:untitled6/features/students/data/model/doctor_model/DoctorsModel
 abstract class AllDoctorRepo {
   Future<Either<Failure, List<DoctorsModel>>> fetchAllDoctors();
 
+
 }
