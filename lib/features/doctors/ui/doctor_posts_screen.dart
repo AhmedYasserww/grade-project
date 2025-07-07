@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled6/features/students/ui/widgets/custom%20text%20_one%20_and%20_text%20_two.dart';
 
-import '../../students/ui/widgets/custom _card _posts _screen.dart';
-
 class DoctorsPostsScreen extends StatelessWidget {
   const DoctorsPostsScreen({super.key});
 
@@ -25,13 +23,13 @@ class DoctorsPostsScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomTextOneAndTextTwo(),
-                          CustomCardPostsScreen(),
+                        //  CustomCardPostsScreen(),
                         ],
                       )),
                 ],
               ),
               SizedBox(height: 20),
-              CustomCardPostsScreen(),
+             // CustomCardPostsScreen(),
             ]),
           ],
         ));
