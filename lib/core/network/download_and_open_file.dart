@@ -14,11 +14,36 @@ Future<void> downloadAndOpenFile(BuildContext context, String relativeUrl) async
     String fileName = relativeUrl.split("/").last;
     String filePath = "${directory.path}/$fileName";
 
+    File file = File(filePath);
+
+    // ✅ لو الملف موجود بالفعل
+    if (await file.exists()) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text("📂 File already exists at:\n$filePath"),
+          backgroundColor: Colors.blue,
+          duration: Duration(seconds: 4),
+        ),
+      );
+
+      await OpenFile.open(filePath);
+      return;
+    }
+
+    // 🔁 عرض جاري التحميل
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("🔁 Downloading file..."),
+        backgroundColor: Colors.orange,
+        duration: Duration(seconds: 2),
+      ),
+    );
+
     // تحميل الملف
     Dio dio = Dio();
     await dio.download(fullUrl, filePath);
 
-    // عرض سناك بار بعد التحميل
+    // ✅ تم التحميل
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("✅ File downloaded to:\n$filePath"),
@@ -40,7 +65,7 @@ Future<void> downloadAndOpenFile(BuildContext context, String relativeUrl) async
       );
     }
   } catch (e) {
-    // خطأ في التحميل
+    // ❌ خطأ في التحميل أو الفتح
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text("❌ Error downloading/opening file:\n$e"),

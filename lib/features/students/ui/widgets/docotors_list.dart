@@ -16,12 +16,13 @@ class DoctorsList extends StatelessWidget {
   // ];
 
   final List<String> doctorImages = [
+    "assets/images/post_profile.png",
     "assets/images/doctor.png",
     "assets/images/doctor.png",
     "assets/images/doctor.png",
     "assets/images/doctor.png",
     "assets/images/doctor.png",
-    "assets/images/doctor.png",
+
   ];
 
   @override
@@ -32,7 +33,7 @@ class DoctorsList extends StatelessWidget {
             return ListView.separated(
               scrollDirection: Axis.horizontal,
               itemCount: state.doctorsList.length,
-              separatorBuilder: (context, index) => SizedBox(width: 12),
+              separatorBuilder: (context, index) => const SizedBox(width: 12),
               itemBuilder: (context, index) {
                 return Column(
                   children: [
@@ -51,11 +52,11 @@ class DoctorsList extends StatelessWidget {
             );
           }
           else if (state is AllDoctorsFailure) {
-            return Center(child: Text("Failed to load doctors", style: TextStyle(color: Colors.red)));
+            return const Center(child: Text("Failed to load doctors", style: TextStyle(color: Colors.red)));
           } else if (state is AllDoctorsLoading) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else {
-            return Center(child: Text("No data", style: TextStyle(color: Colors.grey)));
+            return const Center(child: Text("No data", style: TextStyle(color: Colors.grey)));
           }
         }
     );
