@@ -47,4 +47,29 @@ class AllPendingUsersCubit extends Cubit<AllPendingUsersState> {
       },
     );
   }
+  Future<void> rejectUser(int userId, BuildContext context) async {
+    final result = await allPendingUsersRepo.rejectUser(userId);
+
+    result.fold(
+          (failure) {
+        print('❌ rejected failed in Cubit: ${failure.errorMessage}');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('❌ Failed to approve: ${failure.errorMessage}'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      },
+          (_) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('✅ User rejected successfully!'),
+            backgroundColor: Colors.green,
+          ),
+        );
+        fetchAllPendingUsers();
+      },
+    );
+  }
+
 }

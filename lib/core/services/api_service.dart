@@ -26,4 +26,8 @@ class ApiService {
     final response = await dio.post('${_baseUrl}users/$userId/approve');
     print('✅ Approve Success Response: ${response.data}');
   }
+  Future<void> rejectUser(int userId) async {
+    final response = await dio.post('${_baseUrl}users/$userId/reject');
+    print('✅ Reject Success Response: ${response.data}');
+  }
 }

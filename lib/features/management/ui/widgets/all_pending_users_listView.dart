@@ -37,7 +37,7 @@ class AllPendingUsersListView extends StatelessWidget {
                   context.read<AllPendingUsersCubit>().approveUser(user.id!, context);
                 },
                 onReject: () {
-                  print('❌ Rejected: ${user.email}');
+                context.read<AllPendingUsersCubit>().rejectUser(user.id!, context);
                 },
               );
             },
