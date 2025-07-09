@@ -29,7 +29,7 @@ class UploadsScreen extends StatelessWidget {
                 const SizedBox(height: 40),
                 CustomNamestablesInUploadscreen(),
                 Divider(color: Colors.grey.shade300),
-                Custom_Row_number_One_in_table_uploadsScreen(),
+                Custom_Row_number_One_in_table_uploadsScreen_Management(),
                 Spacer(),
                 Custom_1_8_Pages(),
                 Text("1 of 8 pages (84 items)", style: TextStyle(color: Colors.grey)),

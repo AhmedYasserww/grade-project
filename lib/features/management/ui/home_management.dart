@@ -17,7 +17,7 @@ class HomeManagement extends StatelessWidget {
           Stack(
             children: [
               Container(
-                padding: EdgeInsets.only(top: 60, bottom: 100),
+                padding: const EdgeInsets.only(top: 60, bottom: 100),
                 width: double.infinity,
                 color: Color(0xFF002B5B),
                 child: Column(

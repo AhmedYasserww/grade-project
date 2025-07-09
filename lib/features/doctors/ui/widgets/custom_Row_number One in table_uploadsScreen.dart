@@ -1,9 +1,7 @@
-// ignore_for_file: file_names, camel_case_types, avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 
-class Custom_Row_number_One_in_table_uploadsScreen extends StatelessWidget {
-  const Custom_Row_number_One_in_table_uploadsScreen({super.key});
+class Custom_Row_number_One_in_table_uploadsScreen_Management extends StatelessWidget {
+  const Custom_Row_number_One_in_table_uploadsScreen_Management({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class Custom_Row_number_One_in_table_uploadsScreen extends StatelessWidget {
               // Handle view or download
             },
             icon:
-                Icon(Icons.insert_drive_file_rounded, color: Color(0xFF94A3B8)),
+            Icon(Icons.insert_drive_file_rounded, color: Color(0xFF94A3B8)),
           ),
         ],
       ),
