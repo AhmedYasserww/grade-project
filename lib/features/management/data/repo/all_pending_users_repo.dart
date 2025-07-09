@@ -4,5 +4,5 @@ import 'package:untitled6/features/management/data/model/all_pending_model/AllPe
 
 abstract class AllPendingUsersRepo {
   Future<Either<Failure, List<AllPendingUsersModel>>> fetchAllPendingUsers();
-
+  Future<Either<Failure, Unit>> approveUser(int userId);
 }

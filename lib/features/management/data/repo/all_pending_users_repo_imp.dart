@@ -30,4 +30,18 @@ class AllPendingUsersRepoImp implements AllPendingUsersRepo {
       return left(ServerFailure(errorMessage: e.toString()));
     }
   }
+  @override
+  Future<Either<Failure, Unit>> approveUser(int userId) async {
+    try {
+      await apiService.approveUser(userId);
+      return right(unit);
+    } on DioException catch (e) {
+      print('❌ DioException in Repo: ${e.response?.data}');
+      return left(ServerFailure.fromDioError(e));
+    } catch (e) {
+      print('❌ Unexpected error in Repo: $e');
+      return left(ServerFailure(errorMessage: e.toString()));
+    }
+  }
+
 }

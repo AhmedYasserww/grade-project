@@ -34,7 +34,7 @@ class AllPendingUsersListView extends StatelessWidget {
                 email: user.email ?? 'No Email',
                 date: formatDate(user.createdAt ?? ''),
                 onAgree: () {
-                  print('✅ Agreed to: ${user.email}');
+                  context.read<AllPendingUsersCubit>().approveUser(user.id!, context);
                 },
                 onReject: () {
                   print('❌ Rejected: ${user.email}');

@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 
-const String devToken = 'Bearer 83|kEqhW5VviG2qTWCTh6FlHEeLqDjEuR0zt2nlMmmh7340b04a'; // ✅ لازم Bearer
+const String devToken = 'Bearer 83|kEqhW5VviG2qTWCTh6FlHEeLqDjEuR0zt2nlMmmh7340b04a';
 
 class ApiService {
   final Dio dio;
-  final String _baseUrl = "https://dfbde476eadd.ngrok-free.app/api/";
+  final String _baseUrl = "https://26e5bea2c314.ngrok-free.app/api/";
 
   ApiService({required this.dio}) {
     dio.options.headers['Authorization'] = devToken;
@@ -21,5 +21,9 @@ class ApiService {
     } else {
       throw Exception("❌ Expected List but got ${response.data.runtimeType}");
     }
+  }
+  Future<void> approveUser(int userId) async {
+    final response = await dio.post('${_baseUrl}users/$userId/approve');
+    print('✅ Approve Success Response: ${response.data}');
   }
 }
