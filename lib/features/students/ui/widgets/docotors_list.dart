@@ -16,12 +16,12 @@ class DoctorsList extends StatelessWidget {
   // ];
 
   final List<String> doctorImages = [
-    "assets/images/post_profile.png",
-    "assets/images/doctor.png",
-    "assets/images/doctor.png",
-    "assets/images/doctor.png",
-    "assets/images/doctor.png",
-    "assets/images/doctor.png",
+    "assets/images/doc1.jpg",
+    "assets/images/doc2.jpg",
+    "assets/images/doc3.jpg",
+    "assets/images/doc4.jpg",
+    "assets/images/doc5.jpg",
+    "assets/images/doc6.jpg",
 
   ];
 
@@ -30,25 +30,28 @@ class DoctorsList extends StatelessWidget {
     return BlocBuilder<AllDoctorsCubit, AllDoctorsState>(
         builder: (context, state) {
           if (state is AllDoctorsSuccess) {
-            return ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: state.doctorsList.length,
-              separatorBuilder: (context, index) => const SizedBox(width: 12),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 32,
-                      backgroundImage: AssetImage(doctorImages[index]),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                     state.doctorsList[index].user?.name?? "unKnown",
-                      style: const TextStyle(color: Colors.white),
-                    ),
-                  ],
-                );
-              },
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: state.doctorsList.length,
+                separatorBuilder: (context, index) => const SizedBox(width: 12),
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 32,
+                        backgroundImage: AssetImage(doctorImages[index]),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                       state.doctorsList[index].user?.name?? "unKnown",
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ],
+                  );
+                },
+              ),
             );
           }
           else if (state is AllDoctorsFailure) {

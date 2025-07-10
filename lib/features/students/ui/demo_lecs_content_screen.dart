@@ -19,37 +19,37 @@ class DemoLecsContent extends StatelessWidget {
               height: 30,
             ),
             // Placeholder for video
-            Container(
-                height: 230,
-                alignment: Alignment.center,
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      AppAssets.lec_vid,
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    ),
-                    Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.replay_10,
-                            color: Colors.white,
-                          ),
-                          Icon(
-                            Icons.play_circle,
-                            color: Colors.white,
-                          ),
-                          Icon(
-                            Icons.forward_10,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                )),
+            // Container(
+            //     height: 230,
+            //     alignment: Alignment.center,
+            //     child: Stack(
+            //       children: [
+            //         Image.asset(
+            //           AppAssets.lec_vid,
+            //           fit: BoxFit.cover,
+            //           width: double.infinity,
+            //         ),
+            //         Center(
+            //           child: Row(
+            //             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //             children: [
+            //               Icon(
+            //                 Icons.replay_10,
+            //                 color: Colors.white,
+            //               ),
+            //               Icon(
+            //                 Icons.play_circle,
+            //                 color: Colors.white,
+            //               ),
+            //               Icon(
+            //                 Icons.forward_10,
+            //                 color: Colors.white,
+            //               ),
+            //             ],
+            //           ),
+            //         )
+            //       ],
+            //     )),
             SizedBox(height: 5),
             // Title
             Padding(

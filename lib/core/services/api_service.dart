@@ -4,7 +4,7 @@ const String devToken = 'Bearer 83|kEqhW5VviG2qTWCTh6FlHEeLqDjEuR0zt2nlMmmh7340b
 
 class ApiService {
   final Dio dio;
-  final String _baseUrl = "https://26e5bea2c314.ngrok-free.app/api/";
+  final String _baseUrl = "https://87aec180fb58.ngrok-free.app/api/";
 
   ApiService({required this.dio}) {
     dio.options.headers['Authorization'] = devToken;

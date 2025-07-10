@@ -4,13 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled6/core/services/service_locator.dart';
 import 'package:untitled6/core/widgets/inputs/default_container.dart';
-import 'package:untitled6/features/students/data/repos/all_courses_repo/all_courses_repo_imp.dart';
 import 'package:untitled6/features/students/data/repos/all_doctor_repo/all_doctor_repo_imp.dart';
-import 'package:untitled6/features/students/data/repos/all_material_repo/all_material_repo_imp.dart';
-import 'package:untitled6/features/students/ui/manager/all_courses_cubit/all_courses_cubit.dart';
+import 'package:untitled6/features/students/ui/first_term_screen.dart';
 import 'package:untitled6/features/students/ui/manager/all_doctors_cubit/all_doctors_cubit.dart';
-import 'package:untitled6/features/students/ui/manager/all_material_cubit/all_material_cubit.dart';
-import 'package:untitled6/features/students/ui/term_screen.dart';
 import 'package:untitled6/features/students/ui/widgets/docotors_list.dart';
 
 import '../../../core/helper/navigator.dart';
@@ -86,7 +82,7 @@ class _ExploreState extends State<Explore> {
                       const SizedBox(height: 40),
                       DefaultContainer(
                           onpressed: () {
-                            navigateTo(context, screen: Term());
+                            navigateTo(context, screen: const FirstTerm());
                           },
                           width: 350,
                           height: 45,

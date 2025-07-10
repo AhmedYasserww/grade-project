@@ -21,37 +21,37 @@ class LecContent extends StatelessWidget {
               height: 30,
             ),
             // Placeholder for video
-            Container(
-                height: 230,
-                alignment: Alignment.center,
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      AppAssets.lec_vid,
-                      fit: BoxFit.cover,
-                      width: double.infinity,
-                    ),
-                    const Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Icon(
-                            Icons.replay_10,
-                            color: Colors.white,
-                          ),
-                          Icon(
-                            Icons.play_circle,
-                            color: Colors.white,
-                          ),
-                          Icon(
-                            Icons.forward_10,
-                            color: Colors.white,
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                )),
+            // Container(
+            //     height: 230,
+            //     alignment: Alignment.center,
+            //     child: Stack(
+            //       children: [
+            //         Image.asset(
+            //           AppAssets.lec_vid,
+            //           fit: BoxFit.cover,
+            //           width: double.infinity,
+            //         ),
+            //         const Center(
+            //           child: Row(
+            //             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //             children: [
+            //               Icon(
+            //                 Icons.replay_10,
+            //                 color: Colors.white,
+            //               ),
+            //               Icon(
+            //                 Icons.play_circle,
+            //                 color: Colors.white,
+            //               ),
+            //               Icon(
+            //                 Icons.forward_10,
+            //                 color: Colors.white,
+            //               ),
+            //             ],
+            //           ),
+            //         )
+            //       ],
+            //     )),
             const SizedBox(height: 5),
             // Title
             Padding(
@@ -101,10 +101,9 @@ class LecContent extends StatelessWidget {
                       trimMode: TrimMode.Line,
                       trimCollapsedText: "Read More ...",
                       trimLines: 5,
-                      "Lorem ipsum dolor sit amet consectetur. Quisque  \ndrasut  frtyhyhp hdhyunbh pellentesque nec quisque \namet proin elit amet. Lorem ipsum dolor sit ametasde consectetur. Quisque  drasut  frtyhyhp hdhyunbhsds \npellentesque nec quisque amet \nproin elit ame rtbavnah nhuth btydgb a.aaaaaaaaaaddddddddd"),
-
+"This lecture covers the fundamentals and principles of programming, providing a solid foundation for developing software and applications. The session aims to equip students with both theoretical knowledge and practical skills necessary for understanding how to design and build software systems using various programming languages. Topics include basic programming concepts such as variables, functions, conditionals, loops, and data manipulation, as well as more advanced topics like object-oriented programming (OOP), error handling, optimization techniques, and algorithms. Students will also engage in practical projects, applying their knowledge to build simple yet functional programs. By the end of the lecture, students will be capable of writing efficient code, developing applications, and applying key programming principles to solve complex problems."
                   // PDF file container
-                  GestureDetector(
+                  ),GestureDetector(
                     onTap: () {
                       downloadAndOpenFile(context, allMaterials.materialLink ?? "");
                     },
@@ -133,7 +132,7 @@ class LecContent extends StatelessWidget {
                                       fontWeight: FontWeight.w700,
                                       fontSize: 14,
                                       color: Color(0xff475569))),
-                              Text('44 GB',
+                              Text('20 MB',
                                   style: TextStyle(
                                       color: Color(0xff475569),
                                       fontSize: 14,

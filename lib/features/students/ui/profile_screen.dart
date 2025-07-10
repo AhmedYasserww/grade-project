@@ -93,11 +93,11 @@ class _ProfileState extends State<Profile> {
                   SizedBox(
                     height: 20,
                   ),
-                  DefaultContainer(
-                      width: 350,
-                      height: 65,
-                      title: "Doctors",
-                      onpressed: () {}),
+                  // DefaultContainer(
+                  //     width: 350,
+                  //     height: 65,
+                  //     title: "Doctors",
+                  //     onpressed: () {}),
                   SizedBox(
                     height: 10,
                   ),

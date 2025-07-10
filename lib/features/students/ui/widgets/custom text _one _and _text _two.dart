@@ -13,7 +13,7 @@ class CustomTextOneAndTextTwo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Welcome, abdo 👋",
+            "Welcome, ahmed 👋",
             style: TextStyle(
                 fontWeight: FontWeight.w700, fontSize: 16, color: Colors.white),
           ),

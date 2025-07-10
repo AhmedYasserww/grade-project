@@ -55,7 +55,9 @@ class OldLectureScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    Text("${material.title}", style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                        child: Text("${material.title}", style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),)),
                   ],
                 ),
               ],

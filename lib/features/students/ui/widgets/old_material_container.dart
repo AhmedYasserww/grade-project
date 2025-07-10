@@ -14,8 +14,7 @@ class OldMaterialsContainers extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Container(
-
-        height: 130,
+        height: 140,
         margin: const EdgeInsets.symmetric(vertical: 8),
         padding: const EdgeInsets.only(left: 12, right: 12, bottom: 5, top: 16),
         decoration: BoxDecoration(
@@ -29,12 +28,16 @@ class OldMaterialsContainers extends StatelessWidget {
             Icon(icon, size: 50, color: Colors.grey),
             const Spacer(),
             const Divider(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(filename, style: const TextStyle(fontSize: 16)),
-                const Icon(Icons.more_horiz, color: Colors.grey),
-              ],
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                      child: Text(filename, style: const TextStyle(fontSize: 16)))),
+                  const Icon(Icons.more_horiz, color: Colors.grey),
+                ],
+              ),
             )
           ],
         ),
