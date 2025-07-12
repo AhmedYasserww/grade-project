@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 
 class CustomTextfieldPostdescriptionAddpostscreen extends StatelessWidget {
-  const CustomTextfieldPostdescriptionAddpostscreen({super.key, required this.text});
-final String text;
+  const CustomTextfieldPostdescriptionAddpostscreen({super.key, required this.hintText,required this.controller});
+final String hintText;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,8 +19,9 @@ final String text;
         border: Border.all(color: Colors.grey.shade600),
       ),
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
-          hintText: text,
+          hintText: hintText,
           border: InputBorder.none,
         ),
         maxLines: null,

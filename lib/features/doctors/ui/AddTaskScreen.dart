@@ -3,8 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled6/features/doctors/ui/widgets/Custom_UploadContainer.dart';
 import 'package:untitled6/features/doctors/ui/widgets/custom_Dataline.dart';
-import 'package:untitled6/features/doctors/ui/widgets/custom_ElevatedButton_AddLectureScreen.dart';
-import 'package:untitled6/features/doctors/ui/widgets/custom_TextField_PostDescription_AddPostScreen.dart';
 import 'package:untitled6/features/doctors/ui/widgets/custom_TopBar_Welome_AddLectureScreen.dart';
 import 'package:untitled6/features/doctors/ui/widgets/custom_name_Add%20a%20lecture_AddLectureScreen.dart';
 
@@ -34,16 +32,16 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                   text: "Add Task",
                 ),
                 const SizedBox(height: 24),
-                CustomTextfieldPostdescriptionAddpostscreen(
-                  text:"task description",
-                ),
+                // CustomTextfieldPostdescriptionAddpostscreen(
+                //   hintText:"task description",
+                // ),
                 const SizedBox(height: 16),
                 UploadContainer(text: "image or video for details",),
                 const SizedBox(height: 16),
                 CustomDataline(),
                 const SizedBox(height: 100),
 
-                CustomElevatedbuttonAddlecturescreen(),
+             //   CustomElevatedbuttonAddlecturescreen(),
               ],
             ),
           ),

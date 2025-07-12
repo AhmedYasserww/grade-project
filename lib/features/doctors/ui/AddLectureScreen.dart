@@ -70,7 +70,7 @@ class _AddLectureScreenState extends State<AddLectureScreen> {
                 UploadContainer(text:"file"),
                 const SizedBox(height:32),
                 const SizedBox(height: 24),
-                CustomElevatedbuttonAddlecturescreen(),
+            //    CustomElevatedbuttonAddlecturescreen(),
               ],
             ),
           ),

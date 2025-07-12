@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:untitled6/features/doctors/ui/widgets/CustomDropdown.dart';
 import 'package:untitled6/features/doctors/ui/widgets/CustomTextField.dart';
 import 'package:untitled6/features/doctors/ui/widgets/Custom_UploadContainer.dart';
-import 'package:untitled6/features/doctors/ui/widgets/custom_ElevatedButton_AddLectureScreen.dart';
 import 'package:untitled6/features/doctors/ui/widgets/custom_TopBar_Welome_AddLectureScreen.dart';
 import 'package:untitled6/features/doctors/ui/widgets/custom_name_Add%20a%20lecture_AddLectureScreen.dart';
 
@@ -69,7 +68,7 @@ class _AddOldMaterialnManagementState extends State<AddOldMaterialnManagement> {
                 const SizedBox(height: 25),
                 UploadContainer(text: "file"),
                 SizedBox(height: 110,),
-                CustomElevatedbuttonAddlecturescreen(),
+               // CustomElevatedbuttonAddlecturescreen(),
               ],
             ),
           ),

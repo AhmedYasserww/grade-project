@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:untitled6/core/services/service_locator.dart';
-import 'package:untitled6/features/management/ui/home_management.dart';
+import 'package:untitled6/features/students/ui/Bottom_nav_bar.dart';
 
 void main() {
   setupServiceLocator();
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           appBarTheme: const AppBarTheme(color: Colors.white)),
       debugShowCheckedModeBanner: false,
-      home: const HomeManagement(),
+      home:  BottonNavBtn(),
     );
   }
 }
