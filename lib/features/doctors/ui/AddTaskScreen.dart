@@ -36,7 +36,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 //   hintText:"task description",
                 // ),
                 const SizedBox(height: 16),
-                UploadContainer(text: "image or video for details",),
+              //  UploadContainer(text: "image or video for details", onFileSelected: (File file) {  },),
                 const SizedBox(height: 16),
                 CustomDataline(),
                 const SizedBox(height: 100),

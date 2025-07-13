@@ -3,6 +3,8 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:untitled6/core/services/api_service.dart';
+import 'package:untitled6/features/demonstrator/data/repo/add_material_repo/add_material_repo.dart';
+import 'package:untitled6/features/demonstrator/data/repo/add_material_repo/add_material_repo_imp.dart';
 import 'package:untitled6/features/demonstrator/data/repo/add_post_repo.dart';
 import 'package:untitled6/features/demonstrator/data/repo/add_post_repo_imp.dart';
 import 'package:untitled6/features/management/data/repo/all_pending_users_repo_imp.dart';
@@ -29,6 +31,8 @@ void setupServiceLocator() {
   getIt.registerSingleton<AddPostRepo>(AddPostRepoImpl(apiService:getIt.get<ApiService>(),
   ));
 
+  getIt.registerSingleton<AddMaterialRepo>(AddMaterialRepoImpl(apiService:getIt.get<ApiService>(),
+  ));
 
 }
 

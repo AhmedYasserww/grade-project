@@ -19,7 +19,7 @@ class _DemoLevelQuizesState extends State<DemoLevelQuizes> {
             Container(
               width: double.infinity,
               height: 300,
-              color: Color(0xff022D4F),
+              color: const Color(0xff022D4F),
             ),
             Container(
               width: double.infinity,
@@ -30,10 +30,10 @@ class _DemoLevelQuizesState extends State<DemoLevelQuizes> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 70,
             ),
-            Center(
+            const Center(
               child: Column(
                 children: [
                   Text(

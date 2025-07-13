@@ -36,8 +36,8 @@ class _AddOldMaterialnManagementState extends State<AddOldMaterialnManagement> {
                 const SizedBox(height: 24),
                 CustomName(text: "Add old Material"),
                 const SizedBox(height: 24),
-                CustomTextField2(hintText: "Lecture name"),
-                CustomTextField2(hintText:" Lecture description"),
+              //  CustomTextField2(hintText: "Lecture name"),
+               // CustomTextField2(hintText:" Lecture description"),
                 CustomDropdown(
                   hintText: "Level",
                   options: [
@@ -64,9 +64,9 @@ class _AddOldMaterialnManagementState extends State<AddOldMaterialnManagement> {
                   },
                 ),
                 const SizedBox(height: 24),
-                UploadContainer(text: "video or image"),
+               // UploadContainer(text: "video or image"),
                 const SizedBox(height: 25),
-                UploadContainer(text: "file"),
+                //UploadContainer(text: "file"),
                 SizedBox(height: 110,),
                // CustomElevatedbuttonAddlecturescreen(),
               ],

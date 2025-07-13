@@ -1,11 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:untitled6/features/demonstrator/data/models/add_materials_model/material_model.dart';
 
 //const String devToken = 'Bearer 83|kEqhW5VviG2qTWCTh6FlHEeLqDjEuR0zt2nlMmmh7340b04a';
-const String devToken = 'Bearer 264|axvtKwUL7n1touC4XrZ8uccA4IKg4O2fJ2wmgrBc09e38488';
+const String devToken = 'Bearer 314|ynyFbUOqcoVxdrEae0RLAMGNAXKyAu3zWkkuSQhrda372137';
 
 class ApiService {
   final Dio dio;
-  final String _baseUrl = "https://1ea7da0026ea.ngrok-free.app/api/";
+  final String _baseUrl = "https://42a567ba9cb2.ngrok-free.app/api/";
 
   ApiService({required this.dio}) {
     dio.options.headers['Authorization'] = devToken;
@@ -50,6 +51,21 @@ class ApiService {
       rethrow;
     } catch (e) {
       print('❌ Unknown error in addPost: $e');
+      rethrow;
+    }
+  }
+  Future<void> addMaterial(FormData formData) async {
+    try {
+      final response = await dio.post(
+        '${_baseUrl}materials',
+        data: formData,
+      );
+      print('✅ Material added: ${response.data}');
+    } on DioException catch (e) {
+      print('❌ DioException in addMaterial: ${e.response?.data ?? e.message}');
+      rethrow;
+    } catch (e) {
+      print('❌ Unknown error in addMaterial: $e');
       rethrow;
     }
   }
